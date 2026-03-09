@@ -48,6 +48,7 @@
     "vitest": "^4.0.18"
   },
   "dependencies": {
-    "@storybook/react": "^10.2.16"
+    "@storybook/react": "^10.2.16",
+    "recharts": "^3.8.0"
   }
 }
