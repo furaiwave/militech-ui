@@ -1,111 +1,111 @@
 .mlt-select {
-    position: relative;
-    font-family: 'JetBrains Mono', 'Fira Code', monospace;
-    width: 100%;
-    user-select: none;
-  }
-  
-  .mlt-select__label {
-    font-size: 9px;
-    font-weight: 700;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: #555555;
-    margin-bottom: 6px;
-  }
-  
-  .mlt-select__trigger {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 16px;
-    background: #0a0a0a;
-    border: 1px solid #2a2a2a;
-    cursor: pointer;
-    transition: border-color 0.15s ease;
-  }
-  
-  .mlt-select__trigger:hover,
-  .mlt-select__trigger--open {
-    border-color: #c8ff00;
-  }
-  
-  .mlt-select__placeholder {
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    color: #444444;
-    text-transform: uppercase;
-  }
-  
-  .mlt-select__value {
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    color: #ffffff;
-    text-transform: uppercase;
-  }
-  
-  .mlt-select__arrow {
-    font-size: 10px;
-    color: #c8ff00;
-    letter-spacing: 0;
-  }
-  
-  .mlt-select__dropdown {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: #0a0a0a;
-    border: 1px solid #2a2a2a;
-    border-top: none;
-    z-index: 100;
-  }
-  
-  .mlt-select__option {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 16px;
-    border-bottom: 1px solid #111111;
-    cursor: pointer;
-    transition: background 0.1s ease;
-  }
-  
-  .mlt-select__option:last-child {
-    border-bottom: none;
-  }
-  
-  .mlt-select__option:hover {
-    background: #111111;
-  }
-  
-  /* выбранный item — зелёный фон как в Marathon */
-  .mlt-select__option--selected {
-    background: #c8ff00;
-  }
-  
-  .mlt-select__option--selected .mlt-select__option-label {
-    color: #000000;
-  }
-  
-  .mlt-select__option--selected:hover {
-    background: #b8ef00;
-  }
-  
-  .mlt-select__check {
-    font-size: 11px;
-    color: #000000;
-    width: 14px;
-    flex-shrink: 0;
-  }
-  
-  .mlt-select__option:not(.mlt-select__option--selected) .mlt-select__check {
-    color: #c8ff00;
-  }
-  
-  .mlt-select__option-label {
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    color: #cccccc;
-    text-transform: uppercase;
-  }
+  position: relative;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  width: 100%;
+  user-select: none;
+}
+
+.mlt-select__label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #555555;
+  margin-bottom: 6px;
+}
+
+.mlt-select__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #0a0a0a;
+  border: 1px solid #2a2a2a;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.mlt-select__trigger:hover,
+.mlt-select__trigger--open {
+  border-color: #c8ff00;
+}
+
+.mlt-select__placeholder {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: #444444;
+  text-transform: uppercase;
+}
+
+.mlt-select__value {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.mlt-select__arrow {
+  font-size: 10px;
+  color: #c8ff00;
+  letter-spacing: 0;
+}
+
+.mlt-select__dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #0a0a0a;
+  border: 1px solid #2a2a2a;
+  border-top: none;
+  z-index: 100;
+}
+
+.mlt-select__option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid #111111;
+  cursor: pointer;
+  transition: background 0.1s ease;
+}
+
+.mlt-select__option:last-child {
+  border-bottom: none;
+}
+
+.mlt-select__option:hover {
+  background: #111111;
+}
+
+/* выбранный item — зелёный фон как в Marathon */
+.mlt-select__option--selected {
+  background: #c8ff00;
+}
+
+.mlt-select__option--selected .mlt-select__option-label {
+  color: #000000;
+}
+
+.mlt-select__option--selected:hover {
+  background: #b8ef00;
+}
+
+.mlt-select__check {
+  font-size: 11px;
+  color: #000000;
+  width: 14px;
+  flex-shrink: 0;
+}
+
+.mlt-select__option:not(.mlt-select__option--selected) .mlt-select__check {
+  color: #c8ff00;
+}
+
+.mlt-select__option-label {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: #cccccc;
+  text-transform: uppercase;
+}

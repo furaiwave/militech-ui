@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+/* подсветка редактируемого столбца */
+.mlt-table__th--editing {
+  color: #c8ff00 !important;
+  border-bottom: 1px solid #c8ff00;
+}
+
+.mlt-table__td--editing {
+  background: rgba(200, 255, 0, 0.04);
+  cursor: text;
+  border-left: 1px solid #c8ff0022;
+  border-right: 1px solid #c8ff0022;
+}
+
+.mlt-table__td--editing:hover {
+  background: rgba(200, 255, 0, 0.08) !important;
+}
+
+.mlt-table__editing-indicator {
+  color: #c8ff00;
+  font-size: 11px;
+}
+
+/* инпут внутри ячейки */
+.mlt-table__input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #c8ff00;
+  color: #ffffff;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  width: 100%;
+  outline: none;
+  padding: 0;
+}
+
+/* контекстное меню */
+.mlt-table__context {
+  position: fixed;
+  z-index: 9999;
+  background: #0a0a0a;
+  border: 1px solid #c8ff00;
+  min-width: 140px;
+}
+
+.mlt-table__context-item {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  color: #c8ff00;
+  cursor: pointer;
+  border-bottom: 1px solid #111111;
+  transition: background 0.1s ease;
+}
+
+.mlt-table__context-item:last-child {
+  border-bottom: none;
+}
+
+.mlt-table__context-item:hover {
+  background: rgba(200, 255, 0, 0.08);
+}
+
+.mlt-table__context-item--muted {
+  color: #444444;
+}
+
+/* нижняя панель редактирования */
+.mlt-table__edit-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  border-top: 1px solid #c8ff0033;
+  background: rgba(200, 255, 0, 0.03);
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #c8ff00;
+}
+
+.mlt-table__edit-done {
+  background: transparent;
+  border: 1px solid #c8ff00;
+  color: #c8ff00;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: background 0.1s ease;
+}
+
+.mlt-table__edit-done:hover {
+  background: rgba(200, 255, 0, 0.08);
+}
+
+.mlt-table__td {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: #aaaaaa;
+  padding: 12px 16px;
+  white-space: nowrap;
+  transition: color 0.1s ease;
+}
+
+.mlt-table__th {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #666666;
+  text-align: left;
+  padding: 10px 16px;
+  border-bottom: 1px solid #1f1f1f;
+  white-space: nowrap;
+}
+
+.mlt-table__label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #666666;
+  padding: 14px 16px 0;
+  margin-bottom: 12px;
+}
