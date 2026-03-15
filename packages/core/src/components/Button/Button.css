@@ -1,65 +1,73 @@
+
 .mlt-btn {
   position: relative;
   display: inline-flex;
   align-items: center;
   gap: 8px;
   font-family: 'JetBrains Mono', 'Fira Code', monospace;
-  font-weight: 500;
-  letter-spacing: 0.1em;
+  font-weight: 700;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   border: 1px solid;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: background 0.15s ease, color 0.15s ease;
   outline: none;
-  background: transparent;
+  border-radius: 0;
 }
 
 /* Sizes */
 .mlt-btn--sm { font-size: 10px; padding: 6px 12px; }
-.mlt-btn--md { font-size: 12px; padding: 10px 20px; }
-.mlt-btn--lg { font-size: 14px; padding: 14px 28px; }
+.mlt-btn--md { font-size: 11px; padding: 10px 20px; }
+.mlt-btn--lg { font-size: 13px; padding: 14px 28px; }
 
-/* Variants */
+/* Primary */
 .mlt-btn--primary {
   color: #00e5ff;
   border-color: #00e5ff;
-  box-shadow: inset 0 0 12px rgba(0,229,255,0.05);
+  background: transparent;
 }
 .mlt-btn--primary:hover {
-  background: rgba(0,229,255,0.08);
-  box-shadow: 0 0 16px rgba(0,229,255,0.3), inset 0 0 12px rgba(0,229,255,0.05);
+  background: #00e5ff;
+  color: #ffffff;
 }
 
+/* Ghost */
 .mlt-btn--ghost {
-  color: #7a8fa6;
-  border-color: #1e2d3d;
+  color: #444444;
+  border-color: #2a2a2a;
+  background: transparent;
 }
 .mlt-btn--ghost:hover {
-  color: #e8f0fe;
-  border-color: #2a3f54;
+  background: #2a2a2a;
+  color: #ffffff;
 }
 
+/* Danger */
 .mlt-btn--danger {
   color: #ff3b3b;
   border-color: #ff3b3b;
+  background: transparent;
 }
 .mlt-btn--danger:hover {
-  background: rgba(255,59,59,0.08);
-  box-shadow: 0 0 16px rgba(255,59,59,0.3);
+  background: #ff3b3b;
+  color: #000000;
 }
 
+/* Terminal */
 .mlt-btn--terminal {
-  color: #00ff88;
-  border-color: #00ff88;
+  color: #101010;
+  border-color: #101010;
+  background: transparent;
 }
 .mlt-btn--terminal:hover {
-  background: rgba(0,255,136,0.08);
-  box-shadow: 0 0 16px rgba(0,255,136,0.3);
+  background: #8ff531;
+  color: #101010;
+  border-color: #8ff531;
 }
 
 /* Disabled */
 .mlt-btn:disabled {
-  opacity: 0.3;
+  opacity: 0.25;
   cursor: not-allowed;
   pointer-events: none;
 }

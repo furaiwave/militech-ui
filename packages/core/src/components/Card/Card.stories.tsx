@@ -45,3 +45,18 @@ export const WithScanline: Story = {
     children: 'Scanline overlay enabled. Visual noise filter active.',
   },
 }
+
+export const ProgressBar: Story = {
+  args: {
+    title: 'CONTAINED ANALYSIS I',
+    subtitle: 'MULTI-ZONE',
+    status: 'active',
+    children: 'Please locate items on Tau Ceti, especially from containers with organic or medical contents.',
+    progress: [
+      { label: 'Loot containers [NuCal preferred++]', value: 0, max: 10 },
+      { label: 'Loot Implants and consumables', value: 0, max: 5 },
+    ],
+    footerBtn: 'Show Story & Rewards',
+    meta: 'CONTRACTS_LNK_EST8\n[STANDARD WRITTEN]',
+  },
+}
