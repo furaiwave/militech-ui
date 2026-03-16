@@ -1,12 +1,19 @@
 import React from "react";
-import './card.css';
+import './Card.css';
 
 type CardStatus = 'active' | 'offline' | 'alert' | 'classified'
+
+type ObjectDetail = {
+    title: string
+    description: string[]
+    items?: { label: string }[]
+}
 
 type ProgressItem = {
     label: string
     value: number
     max: number
+    detail?: ObjectDetail
 }
 
 type CardProps = {
@@ -35,6 +42,8 @@ export const Card = ({
     onFooterBtn,
     meta,
 }: CardProps) => {
+    const[hoveredProgress, setHoveredProgress] = React.useState<number | null>(null)
+    
     return (
         <div className={[ 'mlt-card', scanline ? 'mlt-card--scnaline' : '', className].filter(Boolean).join('')} data-status={status}>
             <div className="mlt-card__header">
@@ -55,14 +64,39 @@ export const Card = ({
             {children && <div className="mlt-card__body">{children}</div>}
 
             {progress?.map((p, i) => (
-                <div className="mlt-card__progress-wrap" key={i}>
-                    <div className="mlt-card__progress-label">{p.label} {p.value}/{p.max}</div>
-                    <div className="mlt-card__progress-bar">
-                        <div 
-                            className="mlt-card__progress-fill"
-                            style={{ width: `${(p.value / p.max) * 100}%`}}
-                        />
+                <div className="mlt-card__progress-wrap" 
+                    key={i}
+                    onMouseEnter={() => p.detail ? setHoveredProgress(i) : null}
+                    onMouseLeave={() => setHoveredProgress(null)}
+                >
+                    <div className="mlt-card__progress-label">{p.label}</div>
+                    <div className="mlt-card__track">
+                        <div className="mlt-card__progress-bar">
+                            <div 
+                                className="mlt-card__progress-fill"
+                                style={{ width: `${(p.value / p.max) * 100}%`}}
+                            />
+                        </div>
+                    <span className="mlt-card__progress-count">{p.value}/{p.max}</span>
                     </div>
+                    {p.detail && hoveredProgress === i && (
+                        <div className="mlt-card__objective">
+                            <div className="mlt-card__object-title">{p.detail.title}</div>
+                            {p.detail.description.map((line, j) => (
+                                <p key={j} className="mlt-card__objective-desc">{line}</p>
+                            ))}
+                            {p.detail.items && (
+                                <ul className="mlt-card__objective-items">
+                                    {p.detail.items.map((item, j) => (
+                                        <li key={j} className="mlt-card__objective-item">
+                                            <span className="mlt-card__objective-icon">#</span>
+                                            {item.label}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                        </div>
+                    )}
                 </div>
             ))}
             

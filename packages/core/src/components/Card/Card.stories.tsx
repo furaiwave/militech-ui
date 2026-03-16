@@ -60,3 +60,38 @@ export const ProgressBar: Story = {
     meta: 'CONTRACTS_LNK_EST8\n[STANDARD WRITTEN]',
   },
 }
+
+export const WithObjective: Story = {
+  render: () => (
+    <div style={{ width: 500, padding: 24, position: 'relative' }}>
+      <Card
+        title="VALUE PROPOSITION I"
+        subtitle="MULTI-ZONE"
+        status="active"
+        children="Traxus is seeking items of value recovered from around Tau Ceti."
+        progress={[
+          {
+            label: 'Exfil Valuables [Traxus treasures++]',
+            value: 0,
+            max: 6,
+            detail: {
+              title: 'OBJECTIVE INTEL',
+              description: [
+                'Treasures with a Traxus icon are worth more progress.',
+                'Treasures are Deluxe or higher rarity Valuables.',
+              ],
+              items: [
+                { label: 'Survey Drone Cartridge' },
+                { label: 'Archival PSAs' },
+                { label: 'Surveillance Recordings' },
+                { label: 'Confiscated Colonial Folklore' },
+              ],
+            },
+          },
+        ]}
+        footerBtn="Show Story & Rewards"
+        meta={'CONTRACTS_LNK_EST8\n[STANDARD WRITTEN]'}
+      />
+    </div>
+  ),
+}

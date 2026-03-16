@@ -4,17 +4,15 @@
   border: 1px solid #7a8a96;
   border-radius: 0;
   font-family: 'JetBrains Mono', 'Fira Code', monospace;
-  overflow: hidden;
+  overflow: visible;
   transition: border-color 0.2s ease;
 }
 
-/* статус меняет цвет рамки */
 .mlt-card[data-status="active"]     { border-color: #4a7a5a; }
 .mlt-card[data-status="alert"]      { border-color: #8a3030; }
 .mlt-card[data-status="classified"] { border-color: #2a2a2a; }
 .mlt-card[data-status="offline"]    { border-color: #6a7a86; }
 
-/* scanline */
 .mlt-card--scanline::after {
   content: '';
   position: absolute;
@@ -65,7 +63,6 @@
   margin-top: 0;
 }
 
-/* status badge — чёрный на светлом */
 .mlt-card__status {
   font-size: 9px;
   font-weight: 700;
@@ -89,20 +86,33 @@
   letter-spacing: 0.02em;
 }
 
-/* прогресс бар */
 .mlt-card__progress-wrap {
-  padding: 0 16px 12px;
+  padding: 10px 16px;
+  border-bottom: 1px solid #7a8a9633;
+  position: relative;
+  cursor: default;
+  transition: background 0.1s ease;
+}
+
+.mlt-card__progress-wrap:hover {
+  background: rgba(0, 0, 0, 0.08);
 }
 
 .mlt-card__progress-label {
   font-size: 11px;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.04em;
   color: #0a0a0a;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
+}
+
+.mlt-card__progress-track {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .mlt-card__progress-bar {
-  width: 100%;
+  flex: 1;
   height: 8px;
   background: #7a8a96;
   border-radius: 0;
@@ -115,7 +125,87 @@
   transition: width 0.3s ease;
 }
 
-/* нижняя кнопка */
+.mlt-card__progress-count {
+  font-size: 10px;
+  font-weight: 700;
+  color: #0a0a0a;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.mlt-card__objective {
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 320px;
+  background: #1a1e24;
+  border: 1px solid #2a3040;
+  border-left: 3px solid #4a6aaa;
+  padding: 20px;
+  z-index: 100;
+  pointer-events: none;
+
+  animation: mlt-objective-in 0.2s ease forwards;
+  transform-origin: left center;
+}
+
+.mlt-card__objective-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #2a3040;
+  padding-bottom: 12px;
+}
+
+.mlt-card__objective-desc {
+  font-size: 12px;
+  line-height: 1.7;
+  color: #8a9ab0;
+  letter-spacing: 0.03em;
+  margin-bottom: 10px;
+}
+
+.mlt-card__objective-items {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  border-top: 1px solid #2a3040;
+  padding-top: 12px;
+}
+
+.mlt-card__objective-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #1e2530;
+  font-size: 12px;
+  color: #c0cce0;
+  letter-spacing: 0.04em;
+}
+
+.mlt-card__objective-item:last-child {
+  border-bottom: none;
+}
+
+.mlt-card__objective-icon {
+  color: #4a6aaa;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.mlt-card__meta {
+  padding: 8px 16px;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0a0a0a99;
+  white-space: pre-line;
+}
+
 .mlt-card__footer {
   display: block;
   padding: 0;
@@ -147,11 +237,14 @@
 
 .mlt-card__footer-line { display: none; }
 
-/* нижний мета текст */
-.mlt-card__meta {
-  padding: 8px 16px;
-  font-size: 9px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #0a0a0a99;
+
+@keyframes mlt-objective-in {
+  from {
+    opacity: 0;
+    transform: translateX(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
