@@ -3,7 +3,7 @@
   background: #9aa8b4;
   border: 1px solid #7a8a96;
   border-radius: 0;
-  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-family: var(--mlt-font-mono);
   overflow: visible;
   transition: border-color 0.2s ease;
 }

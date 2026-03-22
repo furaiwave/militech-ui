@@ -1,6 +1,6 @@
 .mlt-select {
   position: relative;
-  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-family: var(--mlt-font-mono);
   width: 100%;
   user-select: none;
 }

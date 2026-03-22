@@ -1,0 +1,106 @@
+.mlt-input-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-family: var(--mlt-font-mono);
+}
+
+.mlt-input__label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #555555;
+}
+
+.mlt-input__field {
+    display: flex;
+    align-items: center;
+    background: #0a0a0a;
+    border: 1px solid #1f1f1f;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    gap: 8px;
+}
+
+/* sizes */
+.mlt-input__field--sm { padding: 6px 10px; }
+.mlt-input__field--md { padding: 10px 14px; }
+.mlt-input__field--lg { padding: 14px 18px; }
+
+/* variants */
+.mlt-input__field--default.mlt-input__field--focused {
+    border-color: #c8ff00;
+    box-shadow: 0 0 0 1px #c8ff0033;
+}
+
+.mlt-input__field--danger {
+    border-color: #ff3b3b44;
+}
+.mlt-input__field--danger.mlt-input__field--focused {
+    border-color: #ff3b3b;
+    box-shadow: 0 0 0 1px #ff3b3b33;
+}
+
+.mlt-input__field--success {
+    border-color: #00ff8844;
+}
+.mlt-input__field--success.mlt-input__field--focused {
+    border-color: #00ff88;
+    box-shadow: 0 0 0 1px #00ff8833;
+}
+
+.mlt-input__field--disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.mlt-input__el {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: var(--mlt-font-mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    color: #e8f0fe;
+    width: 100%;
+    min-width: 0;
+}
+
+.mlt-input__el::placeholder {
+    color: #333333;
+}
+
+.mlt-input__el:disabled {
+    cursor: not-allowed;
+}
+
+.mlt-input__prefix {
+    font-size: 12px;
+    color: #c8ff00;
+    letter-spacing: 0.1em;
+    flex-shrink: 0;
+    user-select: none;
+}
+
+.mlt-input__suffix {
+    font-size: 10px;
+    color: #444444;
+    letter-spacing: 0.1em;
+    flex-shrink: 0;
+    user-select: none;
+}
+
+.mlt-input__hint {
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    color: #444444;
+    text-transform: uppercase;
+}
+
+.mlt-input__error {
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    color: #ff3b3b;
+    text-transform: uppercase;
+}

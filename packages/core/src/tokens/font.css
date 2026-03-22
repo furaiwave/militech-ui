@@ -1,0 +1,61 @@
+@font-face {
+    font-family: 'PPFraktion';
+    src: url('../fonts/PPFraktionMono-Regular-BF675904a6a1564.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'PPFraktion';
+    src: url('../fonts/PPFraktionMono-Bold-BF675904a6c4c6e.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'PPFraktion';
+    src: url('../fonts/PPFraktionMono-BoldItalic-BF675904a6f3fc1.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'PPFraktion';
+    src: url('../fonts/PPFraktionMono-RegularItalic-BF675904a6859b6.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'PPFraktionSans';
+    src: url('../fonts/PPFraktionSans-Bold-BF675904a667d89.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'PPFraktionSans';
+    src: url('../fonts/PPFraktionSans-BoldItalic-BF675904a70061a.otf') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'PPFraktionSans';
+    src: url('../fonts/PPFraktionSans-Light-BF675904a63027f.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'PPFraktionSans';
+    src: url('../fonts/PPFraktionSans-LightItalic-BF675904a6ee54f.otf') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+  }
+  
+  /* глобальная переменная — меняешь тут, меняется везде */
+  :root {
+    --mlt-font-mono: 'PPFraktion', 'JetBrains Mono', monospace;
+    --mlt-font-sans: 'PPFraktionSans', 'JetBrains Mono', monospace;
+  }
