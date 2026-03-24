@@ -1,0 +1,183 @@
+.mlt-dialog__backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: mlt-backdrop-in 0.2s ease forwards;
+}
+
+@keyframes mlt-backdrop-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.mlt-dialog {
+    position: relative;
+    background: #0a0a0a;
+    border: 1px solid #1f1f1f;
+    width: 100%;
+    max-width: 480px;
+    margin: 24px;
+    animation: mlt-dialog-in 0.2s ease forwards;
+}
+
+@keyframes mlt-dialog-in {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* варианты — меняют цвет акцента */
+.mlt-dialog--default  { border-color: #1f1f1f; }
+.mlt-dialog--danger   { border-color: #ff3b3b44; }
+.mlt-dialog--classified { border-color: #c8ff0044; }
+
+/* угловые декораторы */
+.mlt-dialog__corner {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+}
+
+.mlt-dialog--default .mlt-dialog__corner { border-color: #c8ff00; }
+.mlt-dialog--danger .mlt-dialog__corner  { border-color: #ff3b3b; }
+.mlt-dialog--classified .mlt-dialog__corner { border-color: #c8ff00; }
+
+.mlt-dialog__corner--tl { top: -1px;    left: -1px;    border-top: 1px solid; border-left: 1px solid; }
+.mlt-dialog__corner--tr { top: -1px;    right: -1px;   border-top: 1px solid; border-right: 1px solid; }
+.mlt-dialog__corner--bl { bottom: -1px; left: -1px;    border-bottom: 1px solid; border-left: 1px solid; }
+.mlt-dialog__corner--br { bottom: -1px; right: -1px;   border-bottom: 1px solid; border-right: 1px solid; }
+
+.mlt-dialog__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px 24px 16px;
+    border-bottom: 1px solid #111111;
+}
+
+.mlt-dialog__header-left {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.mlt-dialog__subtitle {
+    font-family: var(--mlt-font-mono);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #444444;
+}
+
+.mlt-dialog--default .mlt-dialog__subtitle    { color: #c8ff00; }
+.mlt-dialog--danger .mlt-dialog__subtitle     { color: #ff3b3b; }
+.mlt-dialog--classified .mlt-dialog__subtitle { color: #c8ff00; }
+
+.mlt-dialog__title {
+    font-family: var(--mlt-font-display);
+    font-size: 28px;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+}
+
+.mlt-dialog__close {
+    background: transparent;
+    border: none;
+    color: #444444;
+    font-size: 12px;
+    cursor: pointer;
+    padding: 4px;
+    font-family: var(--mlt-font-mono);
+    transition: color 0.15s ease;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.mlt-dialog__close:hover {
+    color: #ffffff;
+}
+
+.mlt-dialog__body {
+    padding: 20px 24px;
+    font-family: var(--mlt-font-mono);
+    font-size: 12px;
+    line-height: 1.8;
+    letter-spacing: 0.04em;
+    color: #666666;
+    border-bottom: 1px solid #111111;
+}
+
+.mlt-dialog__footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    padding: 16px 24px;
+}
+
+.mlt-dialog__btn {
+    font-family: var(--mlt-font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 10px 24px;
+    border: 1px solid;
+    cursor: pointer;
+    border-radius: 0;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.mlt-dialog__btn--secondary {
+    background: transparent;
+    color: #444444;
+    border-color: #222222;
+}
+
+.mlt-dialog__btn--secondary:hover {
+color: #ffffff;
+border-color: #444444;
+}
+
+/* primary меняет цвет по варианту */
+.mlt-dialog--default .mlt-dialog__btn--primary {
+    background: #c8ff00;
+    color: #000000;
+    border-color: #c8ff00;
+}
+.mlt-dialog--default .mlt-dialog__btn--primary:hover {
+    background: transparent;
+    color: #c8ff00;
+}
+
+.mlt-dialog--danger .mlt-dialog__btn--primary {
+    background: #ff3b3b;
+    color: #000000;
+    border-color: #ff3b3b;
+}
+.mlt-dialog--danger .mlt-dialog__btn--primary:hover {
+    background: transparent;
+    color: #ff3b3b;
+}
+
+.mlt-dialog--classified .mlt-dialog__btn--primary {
+    background: #c8ff00;
+    color: #000000;
+    border-color: #c8ff00;
+}
+.mlt-dialog--classified .mlt-dialog__btn--primary:hover {
+    background: transparent;
+    color: #c8ff00;
+}

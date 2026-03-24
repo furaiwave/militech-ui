@@ -1,0 +1,185 @@
+.mlt-banner {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: #050505;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  /* тёмный оверлей поверх фото */
+  .mlt-banner__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.85) 0%,
+      rgba(0, 0, 0, 0.4) 60%,
+      rgba(0, 0, 0, 0.7) 100%
+    );
+    z-index: 1;
+  }
+  
+  /* scanline поверх всего */
+  .mlt-banner__scanline {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.12) 2px,
+      rgba(0, 0, 0, 0.12) 4px
+    );
+    pointer-events: none;
+    z-index: 2;
+  }
+  
+  /* угловые декоративные элементы */
+  .mlt-banner__corner {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    z-index: 3;
+  }
+  
+  .mlt-banner__corner--tl {
+    top: 24px;
+    left: 24px;
+    border-top: 1px solid #c8ff00;
+    border-left: 1px solid #c8ff00;
+  }
+  
+  .mlt-banner__corner--br {
+    bottom: 24px;
+    right: 24px;
+    border-bottom: 1px solid #c8ff00;
+    border-right: 1px solid #c8ff00;
+  }
+  
+  .mlt-banner__content {
+    position: relative;
+    z-index: 4;
+    padding: 80px 64px;
+    max-width: 800px;
+  }
+  
+  /* eyebrow — маленький текст над заголовком */
+  .mlt-banner__eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--mlt-font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #c8ff00;
+    margin-bottom: 24px;
+  }
+  
+  .mlt-banner__eyebrow-line {
+    display: block;
+    height: 1px;
+    width: 32px;
+    background: #c8ff00;
+    opacity: 0.6;
+  }
+  
+  /* главный заголовок — IvyPresto */
+  .mlt-banner__title {
+    font-family: var(--mlt-font-display);
+    font-size: clamp(48px, 8vw, 96px);
+    font-weight: 400;
+    line-height: 0.95;
+    color: #ffffff;
+    margin: 0 0 24px;
+    letter-spacing: -0.02em;
+  }
+  
+  /* подзаголовок — моно */
+  .mlt-banner__subtitle {
+    font-family: var(--mlt-font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c8ff00;
+    margin-bottom: 20px;
+  }
+  
+  .mlt-banner__description {
+    font-family: var(--mlt-font-mono);
+    font-size: 12px;
+    line-height: 1.8;
+    letter-spacing: 0.04em;
+    color: #7a8fa6;
+    margin: 0 0 40px;
+    max-width: 480px;
+  }
+  
+  /* кнопки */
+  .mlt-banner__actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  
+  .mlt-banner__btn {
+    font-family: var(--mlt-font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 14px 32px;
+    border: 1px solid;
+    cursor: pointer;
+    border-radius: 0;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  
+  .mlt-banner__btn--primary {
+    background: #c8ff00;
+    color: #000000;
+    border-color: #c8ff00;
+  }
+  
+  .mlt-banner__btn--primary:hover {
+    background: transparent;
+    color: #c8ff00;
+  }
+  
+  .mlt-banner__btn--secondary {
+    background: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+  }
+  
+  .mlt-banner__btn--secondary:hover {
+    background: #ffffff;
+    color: #000000;
+  }
+  
+  /* нижняя полоса */
+  .mlt-banner__footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    border-top: 1px solid #1f1f1f;
+    font-family: var(--mlt-font-mono);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #333333;
+  }
