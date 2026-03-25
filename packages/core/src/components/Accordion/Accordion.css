@@ -1,0 +1,126 @@
+.mlt-accordion {
+    font-family: var(--mlt-font-mono);
+    background: transparent;
+    border: 1px solid #1f1f1f;
+  }
+  
+  .mlt-accordion__item {
+    border-bottom: 1px solid #1f1f1f;
+  }
+  
+  .mlt-accordion__item:last-child {
+    border-bottom: none;
+  }
+  
+  .mlt-accordion__item--open {
+    background: rgba(200, 255, 0, 0.02);
+  }
+  
+  .mlt-accordion__trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    text-align: left;
+    gap: 16px;
+    appearance: none;
+    -webkit-appearance: none;
+    transition: background 0.15s ease;
+  }
+  
+  .mlt-accordion__trigger:hover {
+    background: rgba(255, 255, 255, 0.02);
+  }
+  
+  .mlt-accordion__item--open .mlt-accordion__trigger {
+    border-bottom: 1px solid #1f1f1f;
+  }
+  
+  .mlt-accordion__trigger-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+  }
+  
+  .mlt-accordion__index {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: #c8ff00;
+    flex-shrink: 0;
+    opacity: 0.4;
+    transition: opacity 0.15s ease;
+    width: 20px;
+  }
+  
+  .mlt-accordion__item--open .mlt-accordion__index {
+    opacity: 1;
+  }
+  
+  .mlt-accordion__title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #555555;
+    transition: color 0.15s ease;
+    white-space: nowrap;
+  }
+  
+  .mlt-accordion__trigger:hover .mlt-accordion__title,
+  .mlt-accordion__item--open .mlt-accordion__title {
+    color: #ffffff;
+  }
+  
+  .mlt-accordion__subtitle {
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #333333;
+    margin-top: 3px;
+    white-space: nowrap;
+  }
+  
+  .mlt-accordion__item--open .mlt-accordion__subtitle {
+    color: #c8ff00;
+  }
+  
+  .mlt-accordion__icon {
+    font-size: 9px;
+    color: #c8ff00;
+    flex-shrink: 0;
+    opacity: 0.6;
+    transition: opacity 0.15s ease;
+    font-family: var(--mlt-font-mono);
+  }
+  
+  .mlt-accordion__item--open .mlt-accordion__icon {
+    opacity: 1;
+  }
+  
+  .mlt-accordion__body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+  
+  .mlt-accordion__body--open {
+    max-height: 600px;
+  }
+  
+  .mlt-accordion__content {
+    padding: 16px 20px 16px 52px;
+    font-size: 11px;
+    line-height: 1.9;
+    letter-spacing: 0.04em;
+    color: #555555;
+    border-left: 1px solid #c8ff0022;
+    margin-left: 20px;
+    margin-bottom: 16px;
+  }
