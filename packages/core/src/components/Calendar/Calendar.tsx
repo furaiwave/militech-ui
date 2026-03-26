@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import './Calendar.css'
 
 type CalendarEvent = {
@@ -42,16 +42,35 @@ export const Calendar = ({
     const[viewMonth, setViewMonth] = useState(today.getMonth())
     const[selected, setSelected] = useState<string[]>([])
     const[hovered, setHovered] = useState<string | null>(null)
+    const[showYearPicker, setShowYearPicker] = useState(false)
+    const[showMonthPicker, setShowMonthPicker] = useState(false)
+    const yearPickerRef = useRef<HTMLDivElement>(null);
+    const monthPickerRef = useRef<HTMLDivElement>(null);
 
     const daysInMonth = getDaysIsMonth(viewYear, viewMonth)
     const firstDay = getFirstDayOfMonth(viewYear, viewMonth)
+
+    const years = Array.from({ length: 21 }, (_, i) => today.getFullYear() - 10 + i)
+
+    useEffect(() => {
+        if(showYearPicker && yearPickerRef.current){
+            const activeItem = yearPickerRef.current.querySelector('.mlt-calendar__year-item--active')
+            activeItem?.scrollIntoView({ block: 'center' })
+        }
+
+        if(showMonthPicker && monthPickerRef.current){
+            const activeItem = monthPickerRef.current.querySelector('.mlt-calendar__month-item--active')
+            activeItem?.scrollIntoView({ block: 'center'})
+        }
+
+    }, [showYearPicker, showMonthPicker])
 
     const eventMap = events.reduce<Record<string, CalendarEvent>>((acc, e) => {
         acc[e.date] = e
         return acc
     }, {})
 
-    const hadnleDayClick = (key: string) => {
+    const handleDayClick = (key: string) => {
         if(mode === 'single'){
             setSelected([key])
             onSelect?.(key)
@@ -67,6 +86,12 @@ export const Calendar = ({
             }
         } 
     }
+
+    /**
+     * Red Hot Chili Peppers
+     * I Am With You
+     * Goodye Hooray
+     */
 
     const isSelected = (key: string) => selected.includes(key)
 
@@ -106,10 +131,52 @@ export const Calendar = ({
             <div className="mlt-calendar__header">
                 <button className="mlt-calendar__nav" onClick={prevMonth}>‹</button>
                 <div className="mlt-calendar__month-label">
-                    {MONTHS[viewMonth]}<span className="mlt-calendar__year">{viewYear}</span>
+                    <span
+                        className="mlt-calendar__month-btn"
+                        onClick={() => { setShowMonthPicker(v => !v); setShowYearPicker(false) }}
+                    >
+                        {MONTHS[viewMonth]}
+                        <span className="mlt-calendar__year-arrow">{showMonthPicker ? ' ∧' : ' ∨'}</span>
+                    </span>
+                    {' '}
+                    <span
+                        className="mlt-calendar__year mlt-calendar__year-btn"
+                        onClick={() => { setShowYearPicker(v => !v); setShowMonthPicker(false) }}
+                    >
+                        {viewYear}
+                        <span className="mlt-calendar__year-arrow">{showMonthPicker ? ' ∧' : ' ∨'}</span>
+                    </span>
                 </div>
                 <button className="mlt-calendar__nav" onClick={nextMonth}>›</button>
             </div>
+            
+            {showMonthPicker && (
+                <div className="mlt-calendar__month-picker" ref={monthPickerRef}>
+                    {MONTHS.map((month, i) => (
+                        <div
+                            key={month}
+                            className={['mlt-calendar__month-item', i === viewMonth ? 'mlt-calendar__month-item--active' : ''].filter(Boolean).join(' ')}
+                            onClick={() =>  setViewMonth(i) }
+                        >
+                            {month}
+                        </div>
+                    ))}
+                </div>
+            )}
+
+            {showYearPicker && (
+                <div className="mlt-calendar__year-picker" ref={yearPickerRef}>
+                    {years.map(y => (
+                        <div
+                            key={y}
+                            className={['mlt-calendar__year-item', y === viewYear ? 'mlt-calendar__year-item--active' : ''].filter(Boolean).join(' ')}
+                            onClick={() => setViewYear(y) }
+                        >
+                            {y}
+                        </div>
+                    ))}
+                </div>
+            )} 
 
             <div className="mlt-calendar__weekdays">
                 {DAYS.map(d => (
@@ -137,7 +204,7 @@ export const Calendar = ({
                                 isRangeEnd(key) ? 'mlt-calendar__cell--range-end' : '',
                                 event ? `mlt-calendar__cell mlt-calendar__cell--event-${event.variant ?? 'dufault'}` : '',
                             ].filter(Boolean).join(' ')}
-                            onClick={() => hadnleDayClick(key)}
+                            onClick={() => handleDayClick(key)}
                             onMouseEnter={() => setHovered(key)}
                             onMouseLeave={() => setHovered(null)}
                         >   
