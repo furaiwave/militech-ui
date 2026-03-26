@@ -1,0 +1,143 @@
+.mlt-avatar {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/* sizes */
+.mlt-avatar--sm .mlt-avatar__inner { width: 32px;  height: 32px; }
+.mlt-avatar--md .mlt-avatar__inner { width: 48px;  height: 48px; }
+.mlt-avatar--lg .mlt-avatar__inner { width: 64px;  height: 64px; }
+.mlt-avatar--xl .mlt-avatar__inner { width: 96px;  height: 96px; }
+
+.mlt-avatar__inner {
+    position: relative;
+    background: #111111;
+    border: 1px solid #2a2a2a;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+}
+
+/* статус меняет цвет border */
+.mlt-avatar--online    .mlt-avatar__inner { border-color: #c8ff00; }
+.mlt-avatar--threat    .mlt-avatar__inner { border-color: #ff3b3b; }
+.mlt-avatar--classified .mlt-avatar__inner { border-color: #c8ff00; }
+.mlt-avatar--offline   .mlt-avatar__inner { border-color: #2a2a2a; }
+
+.mlt-avatar__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.mlt-avatar__initials {
+    font-family: var(--mlt-font-mono);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: #c8ff00;
+    text-transform: uppercase;
+    user-select: none;
+}
+
+.mlt-avatar--sm .mlt-avatar__initials { font-size: 10px; }
+.mlt-avatar--md .mlt-avatar__initials { font-size: 14px; }
+.mlt-avatar--lg .mlt-avatar__initials { font-size: 18px; }
+.mlt-avatar--xl .mlt-avatar__initials { font-size: 28px; }
+
+/* статус точка */
+.mlt-avatar__status {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    width: 8px;
+    height: 8px;
+    border: 1px solid #0a0a0a;
+}
+
+.mlt-avatar--sm .mlt-avatar__status { width: 6px; height: 6px; }
+.mlt-avatar--lg .mlt-avatar__status { width: 10px; height: 10px; }
+.mlt-avatar--xl .mlt-avatar__status { width: 12px; height: 12px; }
+
+.mlt-avatar__status--online     { background: #c8ff00; animation: mlt-pulse 1.5s ease-in-out infinite; }
+.mlt-avatar__status--offline    { background: #333333; }
+.mlt-avatar__status--threat     { background: #ff3b3b; animation: mlt-pulse 0.8s ease-in-out infinite; }
+.mlt-avatar__status--classified { background: #c8ff00; }
+
+@keyframes mlt-pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.3; }
+}
+
+/* HUD рамка */
+.mlt-avatar--hud {
+    padding: 8px;
+}
+
+.mlt-avatar__corner {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    z-index: 2;
+}
+
+.mlt-avatar--online .mlt-avatar__corner,
+.mlt-avatar--classified .mlt-avatar__corner { border-color: #c8ff00; }
+.mlt-avatar--threat .mlt-avatar__corner     { border-color: #ff3b3b; }
+.mlt-avatar--offline .mlt-avatar__corner    { border-color: #333333; }
+.mlt-avatar:not([class*="mlt-avatar--online"]):not([class*="mlt-avatar--threat"]):not([class*="mlt-avatar--offline"]):not([class*="mlt-avatar--classified"]) .mlt-avatar__corner { border-color: #c8ff00; }
+
+.mlt-avatar__corner--tl { top: 0;    left: 0;    border-top: 1px solid; border-left: 1px solid; }
+.mlt-avatar__corner--tr { top: 0;    right: 0;   border-top: 1px solid; border-right: 1px solid; }
+.mlt-avatar__corner--bl { bottom: 0; left: 0;    border-bottom: 1px solid; border-left: 1px solid; }
+.mlt-avatar__corner--br { bottom: 0; right: 0;   border-bottom: 1px solid; border-right: 1px solid; }
+
+/* HUD лейбл */
+.mlt-avatar__hud-label {
+    font-family: var(--mlt-font-mono);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #c8ff00;
+    margin-top: 6px;
+    text-align: center;
+}
+
+.mlt-avatar--threat .mlt-avatar__hud-label     { color: #ff3b3b; }
+.mlt-avatar--offline .mlt-avatar__hud-label    { color: #333333; }
+
+/* Avatar Group */
+.mlt-avatar-group {
+    display: flex;
+    align-items: center;
+}
+
+.mlt-avatar-group__item {
+    margin-left: -10px;
+    transition: transform 0.15s ease, z-index 0s;
+    z-index: 1;
+}
+
+.mlt-avatar-group__item:first-child {
+    margin-left: 0;
+}
+
+.mlt-avatar-group__item:hover {
+    transform: translateY(-4px);
+    z-index: 10;
+}
+
+.mlt-avatar-group__rest .mlt-avatar__inner {
+    border-color: #2a2a2a;
+}
+
+.mlt-avatar-group__rest .mlt-avatar__initials {
+    color: #555555;
+    font-size: 11px;
+}
