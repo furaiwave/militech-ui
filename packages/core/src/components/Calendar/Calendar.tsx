@@ -50,7 +50,7 @@ export const Calendar = ({
     const daysInMonth = getDaysIsMonth(viewYear, viewMonth)
     const firstDay = getFirstDayOfMonth(viewYear, viewMonth)
 
-    const years = Array.from({ length: 21 }, (_, i) => today.getFullYear() - 10 + i)
+    const years = Array.from({ length: 210 }, (_, i) => today.getFullYear() - 100 + i)
 
     useEffect(() => {
         if(showYearPicker && yearPickerRef.current){

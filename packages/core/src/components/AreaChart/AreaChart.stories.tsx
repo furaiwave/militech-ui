@@ -9,39 +9,58 @@ const meta: Meta<typeof AreaChart> = {
 export default meta
 type Story = StoryObj<typeof AreaChart>
 
-const generateData = () => 
-    ['NOV', 'DEC', 'JAN', 'FEB', 'MAR', 'APR'].flatMap((month, mi) => 
-        Array.from({ length: 8 }, (_, i) => ({
-            name: i === 0 ? month : '',
-            value: Math.floor(80 + Math.random() * 20 + mi * 8 + i * 1.5),
-        }))
-    )
+const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL']
 
-const data = generateData()
+const data = months.map(m => ({
+    name: m,
+    alpha: Math.floor(80 + Math.random() * 60),
+    bravo: Math.floor(40 + Math.random() * 60),
+    charlie: Math.floor(20 + Math.random() * 60)
+}))
 
-export const Default: Story = {
+export const Multiline: Story = {
     render: () => (
-        <div style={{ width: 600, background: '#050505', padding: 24 }}>
+        <div style={{ width: 640, background: '#050505', padding: 24 }}>
             <AreaChart 
                 data={data}
-                dataKey="value"
-                xKey="name"
-                label="ASSET PERFORMANCE"
-                height={260}
+                label="SQUAD PERFOMANCE"
+                height={280}
+                showLegend
+                series={[
+                    { key: 'alpha', label: 'Alpha', color: '#c8ff00' },
+                    { key: 'bravo', label: 'Bravo', color: '#00e5ff' },
+                    { key: 'charlie', label: 'Charlie', color: '#ff3b3b' },
+                ]}
             />
         </div>
     )
 }
 
-export const Threat: Story = {
+export const SingleLine: Story = {
     render: () => (
-        <div style={{ width: 600, background: '#050505', padding: 24 }}>
+        <div style={{ width: 640, background: '#050505', padding: 24 }}>
             <AreaChart 
                 data={data}
-                dataKey="value"
-                xKey="name"
-                label="THREAT LEVEL OVER TIME"
-                height={260}
+                label="ASSET PERFOMANCE"
+                height={280}
+                series={[{ key: 'alpha', color: '#c8ff00' }]}
+            />
+        </div>
+    )
+}
+
+export const ThreatLevel: Story = {
+    render: () => (
+        <div style={{ width: 640, background: '#050505', padding: 24 }}>
+            <AreaChart 
+                data={data}
+                label="THREAT ANALYSIS"
+                height={280}
+                showLegend
+                series={[
+                    { key: 'alpha', color: '#c8ff00' },
+                    { key: 'bravo', color: '#00e5ff' },
+                ]}
             />
         </div>
     )

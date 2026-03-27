@@ -11,28 +11,79 @@
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #c8ff00;    
+  color: #666666;
   margin-bottom: 16px;
 }
 
 .mlt-chart__tooltip {
   background: #0d0d0d;
-  border: 1px solid #c8ff00;
-  padding: 8px 12px;
+  border: 1px solid #2a2a2a;
+  padding: 10px 14px;
   border-radius: 0;
+  min-width: 140px;
 }
 
 .mlt-chart__tooltip-label {
   font-size: 9px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  color: #444444;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #1a1a1a;
+  padding-bottom: 6px;
+}
+
+.mlt-chart__tooltip-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.mlt-chart__tooltip-dot {
+  width: 6px;
+  height: 6px;
+  flex-shrink: 0;
+}
+
+.mlt-chart__tooltip-name {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: #555555;
-  margin-bottom: 4px;
+  flex: 1;
 }
 
 .mlt-chart__tooltip-value {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 700;
-  color: #c8ff00;
   letter-spacing: 0.1em;
+}
+
+/* legend */
+.mlt-chart__legend {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+.mlt-chart__legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mlt-chart__legend-line {
+  display: block;
+  width: 16px;
+  height: 2px;
+}
+
+.mlt-chart__legend-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #555555;
 }
