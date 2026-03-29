@@ -1,12 +1,13 @@
 .mlt-card {
   position: relative;
-  background: #9aa8b4;
-  border: 1px solid #7a8a96;
+  background: #0a0a0a;
+  border: 1px solid #1a1a1a;
   border-radius: 0;
   font-family: var(--mlt-font-mono);
   overflow: visible;
   transition: border-color 0.2s ease;
 }
+
 
 .mlt-card[data-status="active"]     { border-color: #4a7a5a; }
 .mlt-card[data-status="alert"]      { border-color: #8a3030; }
@@ -35,7 +36,7 @@
   align-items: flex-start;
   justify-content: space-between;
   padding: 16px 16px 12px;
-  border-bottom: 1px solid #7a8a9666;
+  border-bottom: 1px solid #1a1a1a;
 }
 
 .mlt-card__header-left {
@@ -51,7 +52,7 @@
   font-weight: 700;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-  color: #0a0a0a;
+  color: #c8ff00;
   line-height: 1.1;
 }
 
@@ -59,7 +60,7 @@
   font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #0a0a0a;
+  color: #6a8a40;
   margin-top: 0;
 }
 
@@ -80,7 +81,7 @@
 
 .mlt-card__body {
   padding: 16px;
-  color: #0a0a0a;
+  color: #5a7040;
   font-size: 12px;
   line-height: 1.8;
   letter-spacing: 0.02em;
@@ -248,3 +249,123 @@
     transform: translateX(0);
   }
 }
+
+.mlt-card--dark {
+  background: #0d0f0a;
+  border-color: #1f2a14;
+}
+
+.mlt-card--dark .mlt-card__title {
+  color: #c8ff00;
+  font-size: 14px;
+}
+
+.mlt-card--dark .mlt-card__subtitle {
+  color: #6a8a40;
+}
+
+.mlt-card--dark .mlt-card__body {
+  color: #5a7040;
+}
+
+.mlt-card--dark .mlt-card__header {
+  border-bottom-color: #1a2410;
+}
+
+.mlt-card--dark .mlt-card__progress-label {
+  color: #5a7040;
+}
+
+.mlt-card--dark .mlt-card__progress-bar {
+  background: #1a2410;
+}
+
+.mlt-card--dark .mlt-card__progress-fill {
+  background: #c8ff00;
+}
+
+.mlt-card--dark .mlt-card__progress-count {
+  color: #c8ff00;
+}
+
+.mlt-card--dark .mlt-card__footer {
+  border-top-color: #1a2410;
+}
+
+.mlt-card--dark .mlt-card__footer-btn {
+  background: #111a08;
+  color: #c8ff00;
+  font-family: var(--mlt-font-mono);
+}
+
+.mlt-card--dark .mlt-card__footer-btn:hover {
+  background: #1a2410;
+}
+
+.mlt-card--dark .mlt-card__meta {
+  color: #3a5025;
+}
+
+.mlt-card--dark[data-status="active"]     { border-color: #c8ff0055; }
+.mlt-card--dark[data-status="alert"]      { border-color: #ff3b3b44; }
+.mlt-card--dark[data-status="classified"] { border-color: #c8ff0055; }
+.mlt-card--dark[data-status="offline"]    { border-color: #222222; }
+
+.mlt-card--dark .mlt-card__objective {
+  left: 100%;
+}
+
+.mlt-card--dark .mlt-card__status--active     { background: #c8ff00; color: #000000; }
+.mlt-card--dark .mlt-card__status--offline    { background: #1a2410; color: #5a7040; }
+.mlt-card--dark .mlt-card__status--alert      { background: #ff3b3b; color: #000000; }
+.mlt-card--dark .mlt-card__status--classified { background: #c8ff00; color: #000000; }
+
+.mlt-card--light {
+  background: #9aa8b4;
+  border-color: #7a8a96;
+}
+
+.mlt-card--light .mlt-card__title {
+  color: #0a0a0a;
+}
+
+.mlt-card--light .mlt-card__subtitle {
+  color: #0a0a0a;
+}
+
+.mlt-card--light .mlt-card__body {
+  color: #0a0a0a;
+}
+
+.mlt-card--light .mlt-card__header {
+  border-bottom-color: #7a8a9666;
+}
+
+.mlt-card--light .mlt-card__progress-label {
+  color: #0a0a0a;
+}
+
+.mlt-card--light .mlt-card__progress-bar {
+  background: #7a8a96;
+}
+
+.mlt-card--light .mlt-card__progress-fill {
+  background: #0a0a0a;
+}
+
+.mlt-card--light .mlt-card__progress-count {
+  color: #0a0a0a;
+}
+
+.mlt-card--light .mlt-card__footer {
+  border-top-color: #7a8a9666;
+}
+
+.mlt-card--light .mlt-card__meta {
+  color: #0a0a0a99;
+}
+
+.mlt-card--light[data-status="active"]     { border-color: #4a7a5a; }
+.mlt-card--light[data-status="alert"]      { border-color: #8a3030; }
+.mlt-card--light[data-status="classified"] { border-color: #2a2a2a; }
+.mlt-card--light[data-status="offline"]    { border-color: #6a7a86; }

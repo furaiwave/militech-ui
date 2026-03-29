@@ -1,0 +1,99 @@
+.mlt-toast {
+    font-family: var(--mlt-font-mono) !important;
+    background: #0a0a0a !important;
+    border: 1px solid #1f1f1f !important;
+    border-radius: 0 !important;
+    color: #ffffff !important;
+    box-shadow: none !important;
+    padding: 14px 16px !important;
+}
+
+.mlt-toast__title {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.2em !important;
+    text-transform: uppercase !important;
+    color: #ffffff !important;
+}
+
+.mlt-toast__desc {
+    font-size: 10px !important;
+    letter-spacing: 0.08em !important;
+    color: #555555 !important;
+    margin-top: 4px !important;
+    text-transform: uppercase !important;
+}
+
+.mlt-toast__action {
+    font-family: var(--mlt-font-mono) !important;
+    font-size: 9px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.15em !important;
+    text-transform: uppercase !important;
+    background: #c8ff00 !important;
+    color: #000000 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 4px 10px !important;
+    cursor: pointer !important;
+}
+
+.mlt-toast__cancel {
+    font-family: var(--mlt-font-mono) !important;
+    font-size: 9px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.15em !important;
+    text-transform: uppercase !important;
+    background: transparent !important;
+    color: #444444 !important;
+    border: 1px solid #222222 !important;
+    border-radius: 0 !important;
+    padding: 4px 10px !important;
+    cursor: pointer !important;
+}
+
+.mlt-toast__close {
+    color: #444444 !important;
+    border-radius: 0 !important;
+}
+
+/* variants */
+.mlt-toast--success {
+    border-color: #00ff8844 !important;
+}
+
+.mlt-toast--success .mlt-toast__title {
+    color: #00ff88 !important;
+}
+
+.mlt-toast--error {
+    border-color: #ff3b3b44 !important;
+}
+
+.mlt-toast--error .mlt-toast__title {
+    color: #ff3b3b !important;
+}
+
+.mlt-toast--warning {
+    border-color: #ffaa0044 !important;
+}
+
+.mlt-toast--warning .mlt-toast__title {
+    color: #ffaa00 !important;
+}
+
+.mlt-toast--info {
+    border-color: #00e5ff44 !important;
+}
+
+.mlt-toast--info .mlt-toast__title {
+    color: #00e5ff !important;
+}
+
+.mlt-toast--classified {
+    border-color: #c8ff0044 !important;
+}
+
+.mlt-toast--classified .mlt-toast__title {
+    color: #c8ff00 !important;
+}

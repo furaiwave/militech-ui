@@ -88,9 +88,9 @@ export const Calendar = ({
     }
 
     /**
-     * Red Hot Chili Peppers
-     * I Am With You
-     * Goodye Hooray
+     * @bang Red Hot Chili Peppers
+     * @album I Am With You
+     * @song Goodye Hooray
      */
 
     const isSelected = (key: string) => selected.includes(key)

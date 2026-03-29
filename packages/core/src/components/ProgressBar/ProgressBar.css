@@ -1,0 +1,105 @@
+.mlt-progress {
+    font-family: var(--mlt-font-mono);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mlt-progress__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mlt-progress__label {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #555555;
+}
+
+.mlt-progress__value {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+.mlt-progress__value--default { color: #c8ff00; }
+.mlt-progress__value--danger  { color: #ff3b3b; }
+.mlt-progress__value--success { color: #00ff88; }
+.mlt-progress__value--warning { color: #ffaa00; }
+
+/* track */
+.mlt-progress__track {
+    position: relative;
+    background: #111111;
+    border: 1px solid #1a1a1a;
+    overflow: hidden;
+}
+
+.mlt-progress__track--sm { height: 6px; }
+.mlt-progress__track--md { height: 12px; }
+.mlt-progress__track--lg { height: 20px; }
+
+/* засечки */
+.mlt-progress__ticks {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: stretch;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.mlt-progress__tick {
+    flex: 1;
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.mlt-progress__tick:last-child {
+    border-right: none;
+}
+
+/* fill */
+.mlt-progress__fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transition: width 0.4s ease;
+    z-index: 1;
+}
+
+.mlt-progress__fill--default { background: #c8ff00; }
+.mlt-progress__fill--danger  { background: #ff3b3b; }
+.mlt-progress__fill--success { background: #00ff88; }
+.mlt-progress__fill--warning { background: #ffaa00; }
+
+/* glow */
+.mlt-progress__fill--default { box-shadow: 0 0 8px rgba(200, 255, 0, 0.4); }
+.mlt-progress__fill--danger  { box-shadow: 0 0 8px rgba(255, 59, 59, 0.4); }
+.mlt-progress__fill--success { box-shadow: 0 0 8px rgba(0, 255, 136, 0.4); }
+.mlt-progress__fill--warning { box-shadow: 0 0 8px rgba(255, 170, 0, 0.4); }
+
+/* striped */
+.mlt-progress__fill--striped {
+background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 4px,
+    rgba(0, 0, 0, 0.2) 4px,
+    rgba(0, 0, 0, 0.2) 8px
+);
+}
+
+/* animated pulse */
+.mlt-progress__fill--animated {
+    animation: mlt-progress-pulse 2s ease-in-out infinite;
+}
+
+@keyframes mlt-progress-pulse {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.7; }
+}

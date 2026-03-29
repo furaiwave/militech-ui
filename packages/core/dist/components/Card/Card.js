@@ -1,6 +1,0 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import './card.css';
-export const Card = ({ title, status, subtitle, children, className = '', scanline = false, }) => {
-    return (_jsxs("div", { className: ['mlt-card', scanline ? 'mlt-card--scnaline' : '', className].filter(Boolean).join(''), "data-status": status, children: [_jsxs("div", { className: "mlt-card__header", children: [_jsxs("div", { className: "mlt-card__header-left", children: [_jsx("span", { className: "mlt-card__corner", "aria-hidden": "true" }), _jsxs("div", { children: [_jsx("div", { className: "mlt-card__title", children: title }), subtitle && _jsx("div", { className: "mlt-card__subtitle", children: subtitle })] })] }), status && (_jsx("span", { className: `mlt-catd__status mlt-card__status--${status}`, children: status.toUpperCase() }))] }), _jsx("div", { className: "mlt-card__body", children: children }), _jsx("div", { className: "mlt-card__footer", "aria-hidden": "true", children: _jsx("span", { className: "mlt-card__footer-line" }) })] }));
-};
-//# sourceMappingURL=Card.js.map

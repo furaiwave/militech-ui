@@ -2,6 +2,7 @@ import React from "react";
 import './Card.css';
 
 type CardStatus = 'active' | 'offline' | 'alert' | 'classified'
+type CardVariant = 'dark' | 'light'
 
 type ObjectDetail = {
     title: string
@@ -27,6 +28,7 @@ type CardProps = {
     footerBtn?: string
     onFooterBtn?: () => void
     meta?: string
+    variant?: CardVariant
 }
 
 
@@ -41,11 +43,20 @@ export const Card = ({
     footerBtn,
     onFooterBtn,
     meta,
+    variant = "dark",
 }: CardProps) => {
     const[hoveredProgress, setHoveredProgress] = React.useState<number | null>(null)
-    
+
+    /**
+       *
+       * @band Blodhound Gang
+       * @album Hooray For Boobies
+       * @song Three Point One Four
+       * 
+       */
+
     return (
-        <div className={[ 'mlt-card', scanline ? 'mlt-card--scnaline' : '', className].filter(Boolean).join('')} data-status={status}>
+        <div className={[ 'mlt-card', `mlt-card--${variant}`, scanline ? 'mlt-card--scnaline' : '', className].filter(Boolean).join(' ')} data-status={status}>
             <div className="mlt-card__header">
                 <div className="mlt-card__header-left">
                     <span className="mlt-card__corner" aria-hidden="true" />

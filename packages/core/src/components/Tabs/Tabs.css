@@ -1,0 +1,116 @@
+.mlt-tabs {
+    font-family: var(--mlt-font-mono);
+    width: 100%;
+}
+
+/* tab list */
+.mlt-tabs__list {
+    display: flex;
+    align-items: stretch;
+    border-bottom: 1px solid #1f1f1f;
+    gap: 0;
+}
+
+.mlt-tabs__tab {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    font-family: var(--mlt-font-mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #444444;
+    transition: color 0.15s ease, background 0.15s ease;
+    appearance: none;
+    -webkit-appearance: none;
+    white-space: nowrap;
+}
+
+.mlt-tabs__tab:hover:not(.mlt-tabs__tab--disabled) {
+    color: #ffffff;
+}
+
+.mlt-tabs__tab--active {
+    color: #ffffff;
+}
+
+.mlt-tabs__tab--disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+}
+
+/* === DEFAULT variant === */
+.mlt-tabs--default .mlt-tabs__tab--active {
+    color: #c8ff00;
+    border-bottom: 2px solid #c8ff00;
+    margin-bottom: -1px;
+}
+
+.mlt-tabs--filled .mlt-tabs__tab--active .mlt-badge {
+    color: #000000;
+    border-color: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.15);
+}
+
+/* === UNDERLINE variant === */
+.mlt-tabs--underline .mlt-tabs__list {
+    border-bottom: none;
+}
+
+.mlt-tabs__underline-track {
+    position: relative;
+    height: 1px;
+    background: #1f1f1f;
+}
+
+.mlt-tabs__underline-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 2px;
+    background: #c8ff00;
+    transition: transform 0.2s ease;
+    margin-top: -1px;
+}
+
+/* === FILLED variant === */
+.mlt-tabs--filled .mlt-tabs__list {
+    background: #0d0d0d;
+    border: 1px solid #1f1f1f;
+    border-bottom: none;
+    gap: 1px;
+    padding: 4px;
+}
+
+.mlt-tabs--filled .mlt-tabs__tab {
+    flex: 1;
+    justify-content: center;
+    padding: 8px 16px;
+}
+
+.mlt-tabs--filled .mlt-tabs__tab--active {
+    background: #c8ff00;
+    color: #000000;
+}
+
+.mlt-tabs--filled .mlt-tabs__tab--active .mlt-tabs__badge {
+    background: rgba(0, 0, 0, 0.2);
+    color: #000000;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+/* panel */
+.mlt-tabs__panel {
+    padding: 20px 0;
+    font-size: 11px;
+    line-height: 1.8;
+    letter-spacing: 0.04em;
+    color: #666666;
+}

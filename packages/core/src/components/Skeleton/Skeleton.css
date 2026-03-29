@@ -1,0 +1,71 @@
+.mlt-skeleton {
+    background: #111111;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    flex-shrink: 0;
+}
+
+.mlt-skeleton--circle {
+    border-radius: 0;
+}
+
+/* shimmer анимация */
+.mlt-skeleton--animate::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(200, 255, 0, 0.04) 40%,
+    rgba(200, 255, 0, 0.08) 50%,
+    rgba(200, 255, 0, 0.04) 60%,
+    transparent 100%
+    );
+
+    animation: mlt-shimmer 1.8s ease-in-out infinite;
+    transform: translateX(-100%);
+}
+
+@keyframes mlt-shimmer {
+    0%   { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* text skeleton */
+.mlt-skeleton-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+/* card skeleton */
+
+
+.mlt-skeleton-card__header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mlt-skeleton-card__header-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+.mlt-skeleton-card__body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mlt-skeleton-card__footer {
+    display: flex;
+    gap: 10px;
+    padding-top: 8px;
+    border-top: 1px solid #1a1a1a;
+}

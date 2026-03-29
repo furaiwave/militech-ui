@@ -43,7 +43,6 @@ export const Table = <TRow extends Record<string, unknown>>({
   const [contextMenu, setContextMenu] = useState<ContextMenu>(null)
   const contextRef = useRef<HTMLDivElement>(null)
 
-  // закрыть контекстное меню при клике вне
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (contextRef.current && !contextRef.current.contains(e.target as Node)) {
@@ -104,7 +103,6 @@ export const Table = <TRow extends Record<string, unknown>>({
     <div className="mlt-table-wrap" onClick={() => editingColumn && handleStopEdit()}>
       {label && <div className="mlt-table__label">{label}</div>}
 
-      {/* контекстное меню */}
       {contextMenu && (
         <div
           ref={contextRef}
