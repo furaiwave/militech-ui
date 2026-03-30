@@ -1,0 +1,68 @@
+.mlt-appbar {
+    display: inline-flex;
+    align-items: stretch;
+    font-family: var(--mlt-font-mono);
+    border: 1px solid #2a2a2a;
+    background: #111111;
+    height: 36px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.mlt-appbar__item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0 16px;
+    border-right: 1px solid #2a2a2a;
+    position: relative;
+    transition: background 0.15s ease;
+}
+
+.mlt-appbar__item:last-child {
+    border-right: none;
+    padding-right: 20px;
+}
+
+.mlt-appbar__item:first-child {
+    padding-left: 20px;
+}
+
+.mlt-appbar__item:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.mlt-appbar__item--accent {
+    background: #c8ff00;
+    border-right-color: #a8df00;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.mlt-appbar__item--accent:hover {
+    background: #b8ef00;
+}
+
+.mlt-appbar__item--accent .mlt-appbar__icon {
+    color: #000000;
+}
+
+.mlt-appbar__item--accent .mlt-appbar__value {
+    color: #000000;
+}
+
+.mlt-appbar__icon {
+    color: #555555;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.mlt-appbar__value {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #888888;
+    white-space: nowrap;
+}
