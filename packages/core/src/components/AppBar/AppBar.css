@@ -1,99 +1,77 @@
 .mlt-appbar {
     display: inline-flex;
-    align-items: stretch;
+    align-items: center;
+    gap: 2px; /* Тот самый отступ между блоками */
     font-family: var(--mlt-font-mono);
-    height: 36px;
-    border-radius: 0 18px 18px 0;
-    overflow: hidden;
-    border: 1px solid #2a2a2a;
-    background: #111111;
+    height: 34px;
+    border: none; /* Убираем общую рамку */
 }
 
 .mlt-appbar__item {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
-    padding: 0 16px;
-    border-right: 1px solid #2a2a2a;
-    position: relative;
-    transition: background 0.15s ease;
-    cursor: default;
-    width: 70px;
+    gap: 8px;
+    padding: 0 14px;
+    background: #111111; /* Фон каждого отдельного блока */
+    height: 100%;
+    color: #888888;
+    border: 1px solid #2a2a2a; /* Рамка для каждого блока */
+    transition: all 0.15s ease;
 }
 
-.mlt-appbar__item:last-child {
-    border-right: none;
+/* --- ПЕРВЫЙ ЭЛЕМЕНТ (сильное скругление слева) --- */
+.mlt-appbar__item--first {
+    border-radius: 17px 0px 0px 17px;
+    padding-left: 16px;
 }
 
-.mlt-appbar__item--clickable {
+/* Акцентный (салатовый) */
+.mlt-appbar__item--accent {
+    background: #c8ff00 !important;
+    border-color: #a8df00 !important;
+    background-color: #a8df00 !important;
+    border-radius: 17px 0px 0px 17px;
+}
+.mlt-appbar__item--accent .mlt-appbar__icon,
+.mlt-appbar__item--accent .mlt-appbar__value {
+    color: #000000 !important;
+}
+
+/* --- КОРИЧНЕВЫЕ ЭЛЕМЕНТЫ (ранг) --- */
+.mlt-appbar__item--brown {
+    background: #5c4331;
+    border-color: #6e523d;
+    color: #000000;
+    min-width: 32px;
+    padding: 0 8px;
+}
+.mlt-appbar__item--brown .mlt-appbar__icon,
+.mlt-appbar__item--brown .mlt-appbar__value {
+    color: #000000 !important;
+}
+
+/* --- ПОСЛЕДНИЙ ЭЛЕМЕНТ (сильное скругление справа) --- */
+.mlt-appbar__item--last {
+    border-radius: 0px 17px 17px 0px;
+    padding-right: 16px;
+}
+
+/* Ховер-эффект для кликабельных блоков */
+.mlt-appbar__item--clickable:hover {
+    background: #1a1a1a;
     cursor: pointer;
 }
 
-.mlt-appbar__item--clickable:hover {
-    background: rgba(255, 255, 255, 0.04);
-}
-
-.mlt-appbar__item--accent {
-    background: #c8ff00;
-    border-right-color: #a8df00;
-}
-
-.mlt-appbar__item--accent .mlt-appbar__icon { color: #000000; }
-.mlt-appbar__item--accent .mlt-appbar__value { color: #000000; }
-
 .mlt-appbar__icon {
-    color: #555555;
     font-size: 14px;
     display: flex;
     align-items: center;
-    flex-shrink: 0;
+    opacity: 0.8;
 }
 
 .mlt-appbar__value {
     font-size: 12px;
     font-weight: 700;
-    letter-spacing: 0.06em;
-    color: #888888;
-    white-space: nowrap;
-    }
-
-/* Button override внутри AppBar */
-.mlt-appbar .mlt-btn {
-    height: 100%;
-    border-radius: 0;
-    border: none;
-    border-right: 1px solid #2a2a2a;
-    padding: 0 16px;
-    font-size: 12px;
-    letter-spacing: 0.06em;
-    text-transform: none;
-    font-weight: 700;
-    box-shadow: none !important;
-    background: #111111 !important;
-    color: #888888 !important;
-}
-
-.mlt-appbar .mlt-btn:hover {
-    background: #1a1a1a !important;
-    color: #ffffff !important;
-}
-
-.mlt-appbar .mlt-btn:last-child {
-    border-radius: 0 16px 16px 0;
-  }
-
-.mlt-appbar .mlt-btn.mlt-appbar__item--accent {
-    background: #c8ff00 !important;
-    color: #000000 !important;
-    border-right-color: #a8df00;
-}
-
-.mlt-appbar .mlt-btn.mlt-appbar__item--accent:hover {
-    background: #b8ef00 !important;
-    color: #000000 !important;
-}
-
-.mlt-appbar .mlt-btn.mlt-appbar__item--first {
-    border-radius: 16px 0 0 16px;
+    letter-spacing: 0.05em;
 }
