@@ -2,54 +2,45 @@
     display: inline-flex;
     align-items: stretch;
     font-family: var(--mlt-font-mono);
+    height: 36px;
+    border-radius: 0 18px 18px 0;
+    overflow: hidden;
     border: 1px solid #2a2a2a;
     background: #111111;
-    height: 36px;
-    border-radius: 20px;
-    overflow: hidden;
 }
 
 .mlt-appbar__item {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 6px;
     padding: 0 16px;
     border-right: 1px solid #2a2a2a;
     position: relative;
     transition: background 0.15s ease;
+    cursor: default;
+    width: 70px;
 }
 
 .mlt-appbar__item:last-child {
     border-right: none;
-    padding-right: 20px;
 }
 
-.mlt-appbar__item:first-child {
-    padding-left: 20px;
+.mlt-appbar__item--clickable {
+    cursor: pointer;
 }
 
-.mlt-appbar__item:hover {
-    background: rgba(255, 255, 255, 0.03);
+.mlt-appbar__item--clickable:hover {
+    background: rgba(255, 255, 255, 0.04);
 }
 
 .mlt-appbar__item--accent {
     background: #c8ff00;
     border-right-color: #a8df00;
-    padding-left: 16px;
-    padding-right: 16px;
 }
 
-.mlt-appbar__item--accent:hover {
-    background: #b8ef00;
-}
-
-.mlt-appbar__item--accent .mlt-appbar__icon {
-    color: #000000;
-}
-
-.mlt-appbar__item--accent .mlt-appbar__value {
-    color: #000000;
-}
+.mlt-appbar__item--accent .mlt-appbar__icon { color: #000000; }
+.mlt-appbar__item--accent .mlt-appbar__value { color: #000000; }
 
 .mlt-appbar__icon {
     color: #555555;
@@ -62,7 +53,47 @@
 .mlt-appbar__value {
     font-size: 12px;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     color: #888888;
     white-space: nowrap;
+    }
+
+/* Button override внутри AppBar */
+.mlt-appbar .mlt-btn {
+    height: 100%;
+    border-radius: 0;
+    border: none;
+    border-right: 1px solid #2a2a2a;
+    padding: 0 16px;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: none;
+    font-weight: 700;
+    box-shadow: none !important;
+    background: #111111 !important;
+    color: #888888 !important;
+}
+
+.mlt-appbar .mlt-btn:hover {
+    background: #1a1a1a !important;
+    color: #ffffff !important;
+}
+
+.mlt-appbar .mlt-btn:last-child {
+    border-radius: 0 16px 16px 0;
+  }
+
+.mlt-appbar .mlt-btn.mlt-appbar__item--accent {
+    background: #c8ff00 !important;
+    color: #000000 !important;
+    border-right-color: #a8df00;
+}
+
+.mlt-appbar .mlt-btn.mlt-appbar__item--accent:hover {
+    background: #b8ef00 !important;
+    color: #000000 !important;
+}
+
+.mlt-appbar .mlt-btn.mlt-appbar__item--first {
+    border-radius: 16px 0 0 16px;
 }
