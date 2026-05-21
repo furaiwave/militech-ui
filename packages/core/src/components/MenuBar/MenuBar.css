@@ -1,0 +1,268 @@
+.mlt-menubar {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--mlt-font-mono);
+  background: #0a0a0a;
+  border-right: 1px solid #1f1f1f;
+  width: 240px;
+  height: 100%;
+  transition: width 0.2s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.mlt-menubar--collapsed {
+  width: 52px;
+}
+
+/* header */
+.mlt-menubar__header {
+  padding: 16px 16px 12px;
+  border-bottom: 1px solid #1f1f1f;
+}
+
+/* toggle */
+.mlt-menubar__toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #1f1f1f;
+  cursor: pointer;
+  font-family: var(--mlt-font-mono);
+  transition: background 0.15s ease;
+}
+
+.mlt-menubar__toggle:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.mlt-menubar__toggle-icon {
+  font-size: 14px;
+  color: #c8ff00;
+  flex-shrink: 0;
+  width: 20px;
+  text-align: center;
+}
+
+.mlt-menubar__toggle-label {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #333333;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* items */
+.mlt-menubar__items {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
+
+.mlt-menubar__items::-webkit-scrollbar {
+  width: 2px;
+}
+
+.mlt-menubar__items::-webkit-scrollbar-thumb {
+  background: #c8ff0033;
+}
+
+/* item */
+.mlt-menubar__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.15s ease;
+  white-space: nowrap;
+  min-height: 40px;
+}
+
+.mlt-menubar__item:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.mlt-menubar__item--active {
+  background: rgba(200, 255, 0, 0.06);
+}
+
+.mlt-menubar__item--active .mlt-menubar__label {
+  color: #c8ff00;
+}
+
+.mlt-menubar__item--active .mlt-menubar__icon {
+  color: #c8ff00;
+}
+
+.mlt-menubar__item--open .mlt-menubar__label {
+  color: #ffffff;
+}
+
+.mlt-menubar__item--open .mlt-menubar__icon {
+  color: #c8ff00;
+}
+
+.mlt-menubar__item--disabled {
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* collapsed item — центрируем иконку */
+.mlt-menubar__item--collapsed {
+  justify-content: center;
+  padding: 10px;
+}
+
+/* active bar */
+.mlt-menubar__active-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #c8ff00;
+}
+
+/* icon */
+.mlt-menubar__icon {
+  font-size: 16px;
+  color: #444444;
+  flex-shrink: 0;
+  width: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s ease;
+}
+
+.mlt-menubar__leaf {
+  width: 100%;
+  justify-content: flex-start;
+  padding-left: 12px !important;
+  border: none !important;
+  border-radius: 0 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #444444 !important;
+}
+
+.mlt-menubar__leaf--active {
+  color: #c8ff00 !important;
+  background: rgba(200, 255, 0, 0.06) !important;
+}
+
+/* scoped overrides: пододвигаем содержимое Accordion'а вплотную к сепаратору */
+.mlt-menubar .mlt-accordion__content {
+  padding: 8px 0;
+}
+
+.mlt-menubar__item {
+  width: 100%;
+  justify-content: flex-start;
+  border: none !important;
+  border-radius: 0 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #444444 !important;
+}
+
+.mlt-menubar__item--active {
+  color: #c8ff00 !important;
+  background: rgba(200, 255, 0, 0.06) !important;
+  border-left: 2px solid #c8ff00 !important;
+}
+
+.mlt-menubar__toggle {
+  width: 100%;
+  justify-content: flex-start;
+  border: none !important;
+  border-bottom: 1px solid #1f1f1f !important;
+  border-radius: 0 !important;
+}
+
+/* label */
+.mlt-menubar__label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #555555;
+  flex: 1;
+  transition: color 0.15s ease;
+}
+
+.mlt-menubar__item:hover .mlt-menubar__label {
+  color: #ffffff;
+}
+
+.mlt-menubar__item:hover .mlt-menubar__icon {
+  color: #888888;
+}
+
+/* right side */
+.mlt-menubar__item-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.mlt-menubar__arrow {
+  font-size: 8px;
+  color: #333333;
+  transition: color 0.15s ease;
+}
+
+.mlt-menubar__item--open .mlt-menubar__arrow {
+  color: #c8ff00;
+}
+
+.mlt-menubar__badge {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 2px 5px;
+  background: rgba(200, 255, 0, 0.1);
+  color: #c8ff00;
+  border: 1px solid #c8ff0033;
+}
+
+/* submenu */
+.mlt-menubar__submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.25s ease;
+}
+
+.mlt-menubar__submenu--open {
+  max-height: 500px;
+}
+
+/* depth indent */
+.mlt-menubar__item-wrap--depth-1 .mlt-menubar__item {
+  padding-left: 46px;
+  background: #050505;
+}
+
+.mlt-menubar__item-wrap--depth-1 .mlt-menubar__item:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.mlt-menubar__item-wrap--depth-2 .mlt-menubar__item {
+  padding-left: 62px;
+  background: #030303;
+}
+
+/* footer */
+.mlt-menubar__footer {
+  padding: 12px 16px;
+  border-top: 1px solid #1f1f1f;
+}

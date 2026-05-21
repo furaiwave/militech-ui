@@ -34,6 +34,7 @@ export const Dialog = ({
     closeOnOverlay = true,
     className = '',
 }: DialogProps) => {
+    
     useEffect(() => {
         if(!open) return
         const handler = (e: KeyboardEvent) => {

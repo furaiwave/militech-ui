@@ -12,13 +12,13 @@ type Story = StoryObj<typeof AppBar>
 export const Default: Story = {
     render: () => (
         <div style={{ padding: 40, background: '#050505' }}>
-            <AppBar 
+            <AppBar
                 items={[
-                    { id: 'level',    value: '46',      accent: true,  icon: '◎' },
-                    { id: 'rank',     value: 'III',                    icon: '•' },
-                    { id: 'kills',    value: '0',                      icon: '⊡' },
-                    { id: 'capacity', value: '0/140',                  icon: '≡' },
-                    { id: 'credits',  value: '7,786',                  icon: '⊙' },
+                    { id: 'level',    label: 'LV',   value: '47',     variant: 'light', onClick: () => console.log('level') },
+                    { id: 'rank',     label: '·',    value: 'III',    variant: 'brown', onClick: () => console.log('rank') },
+                    { id: 'kills',    label: 'KL',   value: '0',      onClick: () => console.log('kills') },
+                    { id: 'capacity', label: 'CAP',  value: '10',     onClick: () => console.log('capacity') },
+                    { id: 'credits',  label: 'CR',   value: '12,246', onClick: () => console.log('credits') },
                 ]}
             />
         </div>
@@ -28,12 +28,12 @@ export const Default: Story = {
 export const Minimal: Story = {
     render: () => (
         <div style={{ padding: 40, background: '#050505' }}>
-            <AppBar 
+            <AppBar
                 items={[
-                    { id: 'unit',    value: 'ALPHA-7',  accent: true },
-                    { id: 'sector',  value: 'SECTOR 4'               },
-                    { id: 'threat',  value: '87%'                    },
-                    { id: 'time',    value: '14:32'                   },
+                    { id: 'unit',   label: 'U',   value: 'ALPHA-7',  variant: 'light', onClick: () => console.log('unit') },
+                    { id: 'sector', label: 'S',   value: 'SECTOR 4', onClick: () => console.log('sector') },
+                    { id: 'threat', label: 'T',   value: '87%',      onClick: () => console.log('threat') },
+                    { id: 'time',   label: 'T',   value: '14:32',    onClick: () => console.log('time') },
                 ]}
             />
         </div>

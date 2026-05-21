@@ -1,21 +1,27 @@
-import React from "react"
+import React, { useState } from "react"
+import { Button } from '../Button'
 import './AppBar.css'
+
+type AppBarVariant = 'light' | 'brown' | 'default'
 
 type AppBarItem = {
     id: string
-    icon?: React.ReactNode
-    value: string | number
+    label?: React.ReactNode
+    value: React.ReactNode
     onClick?: () => void
-    variant?: 'accent' | 'brown' | 'default'
+    variant?: AppBarVariant
 }
 
 type AppBarProps = {
     items: AppBarItem[]
     className?: string
+    defaultActiveId?: string
+    activeId?: string
+    onActiveChange?: (id: string) => void
 }
 
 /**
- * 
+ *
  * @band Bullet For My Valentine
  * @album The Poison
  * @song Tears Don't Fall
@@ -24,31 +30,48 @@ type AppBarProps = {
 export const AppBar = ({
     items,
     className = '',
+    defaultActiveId,
+    activeId,
+    onActiveChange,
 }: AppBarProps) => {
+    const [internalActive, setInternalActive] = useState<string>(
+        defaultActiveId ?? ''
+    )
+    const isControlled = activeId !== undefined
+    const active = isControlled ? activeId : internalActive
+
     return (
         <div className={['mlt-appbar', className].filter(Boolean).join(' ')}>
             {items.map((item, i) => {
                 const isFirst = i === 0
                 const isLast = i === items.length - 1
-                
+                const isActive = item.id === active
+                const variant: AppBarVariant = item.variant ?? 'default'
+
                 const itemClasses = [
                     'mlt-appbar__item',
-                    isFirst ? 'mlt-appbar__item--accent' : '',
+                    `mlt-appbar__item--${variant}`,
+                    isFirst ? 'mlt-appbar__item--first' : '',
                     isLast ? 'mlt-appbar__item--last' : '',
-                    item.variant === 'accent' ? 'mlt-appbar__item--accent' : '',
-                    item.variant === 'brown' ? 'mlt-appbar__item--brown' : '',
-                    item.onClick ? 'mlt-appbar__item--clickable' : ''
+                    isActive ? 'mlt-appbar__item--active' : '',
                 ].filter(Boolean).join(' ')
 
+                const handleClick = () => {
+                    if (!isControlled) setInternalActive(item.id)
+                    onActiveChange?.(item.id)
+                    item.onClick?.()
+                }
+
                 return (
-                    <div 
-                        key={item.id} 
+                    <Button
+                        key={item.id}
+                        variant="ghost"
                         className={itemClasses}
-                        onClick={item.onClick}
+                        onClick={handleClick}
                     >
-                        {item.icon && <span className="mlt-appbar__icon">{item.icon}</span>}
+                        {item.label != null && <span className="mlt-appbar__label">{item.label}</span>}
                         <span className="mlt-appbar__value">{item.value}</span>
-                    </div>
+                    </Button>
                 )
             })}
         </div>
